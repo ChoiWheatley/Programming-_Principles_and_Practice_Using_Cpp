@@ -8,6 +8,7 @@
 
 //------------------------------------------------------------------------------
 
+/*
 Simple_window::Simple_window(Point xy, int w, int h, const string& title) :
     Window(xy,w,h,title),
     next_button(Point(x_max()-70,0), 70, 20, "Next", cb_next),
@@ -15,6 +16,7 @@ Simple_window::Simple_window(Point xy, int w, int h, const string& title) :
 {
     attach(next_button);
 }
+*/
 
 //------------------------------------------------------------------------------
 
@@ -39,18 +41,18 @@ bool Simple_window::wait_for_button()
 
 //------------------------------------------------------------------------------
 
-void Simple_window::cb_next(Address, Address pw)
+//void Simple_window::cb_next(Address, Address pw)
 // call Simple_window::next() for the window located at pw
-{  
-    reference_to<Simple_window>(pw).next();    
-}
+//{  
+//    reference_to<Simple_window>(pw).next();    
+//}
 
 //------------------------------------------------------------------------------
 
-void Simple_window::next()
-{
-    button_pushed = true;
-    hide();
-}
+//void Simple_window::next()
+//{
+//    button_pushed = true;
+//    hide();
+//}
 
 //------------------------------------------------------------------------------

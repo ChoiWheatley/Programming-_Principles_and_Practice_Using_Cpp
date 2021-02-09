@@ -12,15 +12,15 @@ struct Simple_window : Window {
 	  button_pushed(false),
 	  next_button(Point(x_max()-70,0), 70, 20, "Next", cb_next) { attach(next_button); }
 	
-	void wait_for_button()
+	bool wait_for_button();
 	// modified event loop
 	// handle all events (as per default), but quit when button_pushed becomes true
 	// this allows graphics without control inversion
-	{
-		while (!button_pushed) Fl::wait();
-		button_pushed = false;
-		Fl::redraw();
-	}
+	//{
+//		while (!button_pushed) Fl::wait();
+//		button_pushed = false;
+//		Fl::redraw();
+//	}
 
 	Button next_button;
 private:
@@ -32,6 +32,6 @@ private:
 		static_cast<Simple_window*>(addr)->next();
 	}
 
-	void next() { button_pushed = true; }
+	void next() { button_pushed = true; hide(); }
 
 };
